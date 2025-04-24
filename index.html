@@ -1,0 +1,58 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Korean Food</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cookie&display=swap" rel="stylesheet">
+
+</head>
+<body>
+    <div class="grid" id="hide">
+        <div>
+            <img src="japche.png" alt="Japche">
+            <h6 class="cookie-regular">Will you buy me Japche?</h6>
+            
+            <div class="button-group">
+                <button onclick="yes()" id="Yes">Yes!</button>
+                <button onclick="no()" id="No">No</button>
+            </div>
+        </div>
+    </div>
+    <div id="yay"></div>
+    <script>
+        let counter=0;
+        function no(){
+            let x=document.getElementById("Yes");
+            let currentHeight = parseInt(window.getComputedStyle(x).height);
+            let currentWidth =parseInt(window.getComputedStyle(x).width);
+            let currentfont=parseInt(window.getComputedStyle(x).fontSize);
+            x.style.height = (currentHeight + 10) + "px";
+            x.style.width = (currentWidth + 10) + "px";
+            x.style.fontSize= (currentfont + 5) + "px";
+            counter++;
+            if(counter >= 5){
+                alert("Just say Yes already! 😄");
+            }
+        }
+        function yes(){
+            let y=document.getElementById("hide");
+            y.style.display="none";
+            let x=document.getElementById("yay").innerHTML=
+            `<h1 class="cookie-regular" style="color:rgb(60, 30, 36); text-align: center; font-size: 25px;"> 
+                You are the best sister in the world hehe!
+                </h1>
+            <img src="hyunjin.png" alt="Stray Kids" style="display: block; margin: 0 auto; width: 200px; height=200px; border-radius: 10px;"> 
+            <h1 class="cookie-regular" style="color:rgb(60, 30, 36); text-align: center; font-size: 25px;">  Hyunjin blesses you!!! </h1>
+            
+            
+            `;
+
+
+
+        }
+    </script>
+</body>
+</html>
